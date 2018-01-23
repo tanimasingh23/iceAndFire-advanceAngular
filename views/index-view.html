@@ -1,0 +1,40 @@
+<div class="row left">
+    <div class="col-lg-4 col-md-6 col-sm-12 ">
+        <select ng-model="queryBy" class="form">
+            <option value="" disabled selected class="disabled">Search By</option>
+            <option value="authors">Book Author</option>
+            <option value="region">Region of House</option>
+            <option value="aliases">Character Alias</option>
+        </select>
+        <input class="form" type="text" ng-model="query[queryBy]" / placeholder="Search" aria-label="Search">
+        <br>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <label class="label">Toggle Alphabetical Order of Name<br> <button class="btn btn-primary btn-md center" ng-click="showDiv = !showDiv"> Click</button></label>
+        <br>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+        <label class="label">Search by Type <input class="form" placeholder="Book/House/Character" class="form-control" ng-model="search.url"></label><br>
+    </div>
+</div>
+
+<br>
+
+
+<div class="row center" ng-init="myBook.loadAllDetails()">
+
+    <div class="col-lg-12 col-md-12">
+                
+        <div ng-show="!showDiv" class="post-preview" ng-repeat="post in myBook.all | filter:search | filter:query | orderBy:['!name','name','aliases[0]']"  >
+            <custom-card post='post'> </custom-card>            
+        </div>
+
+        <div ng-hide="!showDiv" class="post-preview" ng-repeat="post in myBook.all | filter:search | filter:query | orderBy:['-!name','-name','-aliases[0]']"  >
+            <custom-card post='post'> </custom-card>
+        </div>
+                    
+    </div>
+
+    <hr>
+                
+</div>

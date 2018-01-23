@@ -1,0 +1,20 @@
+
+<div ng-style="postStyle">
+
+	<div ng-if="(post.url|getType)=='book'" >
+        <h3><a ng-href="#/single-view/{{post.url|getUrl}}">{{post.name}}</a></h3>
+         <p> Author: {{post.authors[0]}}</p> 
+    </div>
+
+                        
+    <div ng-if="(post.url|getType)=='house'">
+		<h3><a ng-href="#/single-view/{{post.url|getUrl}}">{{post.name}}</a></h3>
+        <p>Region : {{post.region}}</p>    
+    </div>
+
+    <div ng-if="(post.url|getType)=='character'">
+		<h3><a ng-href="#/single-view/{{post.url|getUrl}}">{{post.aliases[0]}}</a></h3>
+        <p>Gender : {{post.gender}}</p>    
+    </div>
+
+</div>

@@ -1,0 +1,154 @@
+<div class="row center" ng-init="single.loadSingle()" >
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview center1">
+
+            <div ng-if="single.type == 'books'">
+                <table class="table table-responsive table-bordered size">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h3>Book</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Name</td>
+                            <td>{{single.book.name}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Author</td>
+                            <td>{{single.book.authors[0]}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Number of Pages</td>
+                            <td>{{single.book.numberOfPages}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Publisher</td>
+                            <td>{{single.book.publisher}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Country</td>
+                            <td>{{single.book.country}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Media Type</td>
+                            <td>{{single.book.mediaType}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Release Date</td>
+                            <td>{{single.book.released | date:'mediumDate'}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Total Characters</td>
+                            <td>{{(single.book.characters).length}}</td>
+                        </tr>
+                        <tr ng-show="single.book.povCharacters[0]">
+                            <td class="bold">Total POV Characters</td>
+                            <td>{{(single.book.povCharacters).length}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-if="single.type == 'houses'">
+                <table class="table table-responsive table-bordered size">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h3>House</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Name</td>
+                            <td>{{single.house.name}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Region</td>
+                            <td>{{single.house.region}}</td>
+                        </tr>
+                        <tr ng-show="single.house.coatOfArms">
+                            <td class="bold">Coat Of Arms</td>
+                            <td>{{single.house.coatOfArms}}</td>
+                        </tr>
+                        <tr ng-show="single.house.words">
+                            <td class="bold">Words</td>
+                            <td>{{single.house.words}}</td>
+                        </tr>
+                        <tr ng-show="single.house.seats[0]">
+                            <td class="bold">Seats</td>
+                            <td>{{single.house.seats[0]}}</td>
+                        </tr>
+                        <tr ng-show="single.house.titles[0]">
+                            <td class="bold">Titles</td>
+                            <td>{{single.house.titles[0]}}</td>
+                        </tr>
+                        <tr ng-show="single.house.founded">
+                            <td class="bold">Founded</td>
+                            <td>{{single.house.founded}}</td>
+                        </tr>
+                        <tr ng-show="single.house.swornMembers[0]">
+                            <td class="bold">Total Sworn Members</td>
+                            <td>{{(single.house.swornMembers).length}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div ng-if="single.type == 'characters'">
+                <table class="table table-responsive table-bordered size">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h3>Character</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-show="single.character.name">
+                            <td class="bold">Name</td>
+                            <td>{{single.character.name}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Alias</td>
+                            <td>{{single.character.aliases[0]}}</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Gender</td>
+                            <td>{{single.character.gender}}</td>
+                        </tr>
+                        <tr ng-show="single.character.culture">
+                            <td class="bold">Culture</td>
+                            <td>{{single.character.culture}}</td>
+                        </tr>
+                        <tr ng-show="single.character.playedBy[0]">
+                            <td class="bold">Played By</td>
+                            <td>{{single.character.playedBy[0]}}</td>
+                        </tr>
+                        <tr ng-show="single.character.books">
+                            <td class="bold">Total Books</td>
+                            <td>{{(single.character.books).length}}</td>
+                        </tr>
+                        <tr ng-show="single.character.tvSeries[0]">
+                            <td class="bold">Total TV Series</td>
+                            <td>{{(single.character.tvSeries).length}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <br>
+
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="next">
+                <a href="#/">Back to Home &rarr;</a>
+            </li>
+        </ul>
+        <br>
+
+    </div>
+</div>
