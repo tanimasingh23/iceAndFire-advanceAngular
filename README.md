@@ -1,4 +1,4 @@
-## Football-Angular
+## Ice And Fire - Advance Angular 
 
 This repository contains a single page application containing all the information about a popular TV Series Game of Thrones and its related book series Ice and Fire.
 Website displays data from [API](https://anapioficeandfire.com).
